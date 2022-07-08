@@ -1,0 +1,17 @@
+h1 {
+  text-align: center;
+  color: rgb(73, 73, 73);
+}
+
+#btnHolder {
+  text-align: center;
+}
+
+#searchBtn {
+  width: 50%;
+  margin-top: 10px;
+}
+
+body {
+  background-color: rgb(253, 204, 251);
+}
