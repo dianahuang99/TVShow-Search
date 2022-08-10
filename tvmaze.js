@@ -14,7 +14,7 @@ $episodesArea.hide();
  */
 
 async function getShowsByTerm(term) {
-  // ADD: Remove placeholder & make request to TVMaze search shows API.
+  // Remove placeholder & make request to TVMaze search shows API.
   const res = await axios.get(`https://api.tvmaze.com/search/shows?q=${term}`);
   if (res.data.length === 0) {
     alert("no show found!");
@@ -78,7 +78,6 @@ function populateShows(shows) {
 async function searchForShowAndDisplay() {
   const term = $("#search-query").val();
   const shows = await getShowsByTerm(term);
-  // $episodesArea.show();
   populateShows(shows);
 }
 
@@ -97,7 +96,7 @@ async function getEpisodesOfShow(id) {
   return res.data;
 }
 
-/** Write a clear docstring for this function... */
+/** Given list of episodes, create markup for each and to DOM  */
 
 function populateEpisodes(episodes) {
   const $episodesList = $("#episodes-list");
@@ -115,7 +114,6 @@ function populateEpisodes(episodes) {
     );
     $episodesList.append($episode);
   }
-  // $episodesArea.removeClass("display");
 }
 
 async function searchForEpisodesAndDisplay(id) {
